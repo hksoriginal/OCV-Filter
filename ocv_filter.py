@@ -46,9 +46,7 @@ class ocvf:
                 ('JPG', '*.jpg')]
             file = asksaveasfile(filetypes=files, defaultextension=files)
 
-        # -------end video capture and stop tk
-        def stoprecording():
-            pass
+
         # Water Color Art Function
         def water():
             try:
@@ -108,6 +106,25 @@ class ocvf:
                  messagebox.showinfo(
                 "Welcome", "Error!,\nNo Image selected")   
         
+        #Motion Blur Image
+        def mblur():
+            try:
+                self.image = cv2.imread(filename)
+                self.image = cv2.resize(self.image,(850,430))
+                self.size = 15
+                self.kernel = np.zeros((self.size, self.size))
+                self.kernel[int((self.size-1)/2),:] = np.ones(self.size)
+                self.kernel= self.kernel/self.size
+                self.output = cv2.filter2D(self.image,-1,self.kernel,self.kernel)
+                b,g,r = cv2.split(self.output)
+                self.output = cv2.merge((r,g,b))
+                self.output = ImageTk.PhotoImage(image = Image.fromarray(self.output))              
+                label_prev = Label(self.root, image=self.output)
+                label_prev.place(x=50, y=20, width=850, height=450) 
+            except:
+                 messagebox.showinfo(
+                "Welcome", "Error!,\nNo Image selected") 
+
         # Median Blurring (Smoothing) 
         def smooth():
             try:
@@ -119,6 +136,20 @@ class ocvf:
                 # label_prev.config(image = self.water_img) 
                                
                 label_prev = Label(self.root, image=self.smooth)
+                label_prev.place(x=50, y=20, width=850, height=450) 
+            except:
+                 messagebox.showinfo(
+                "Welcome", "Error!,\nNo Image selected") 
+
+        # Gaussian Blur
+        def gblur():
+            try:
+                image = cv2.imread(filename) 
+                image = cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
+                image = cv2.resize(image,(850,430))
+                self.output_gaussian = cv2.GaussianBlur(image,(5,5),0)
+                self.gblur = ImageTk.PhotoImage(image = Image.fromarray(self.output_gaussian))                
+                label_prev = Label(self.root, image=self.gblur)
                 label_prev.place(x=50, y=20, width=850, height=450) 
             except:
                  messagebox.showinfo(
@@ -182,6 +213,22 @@ class ocvf:
         smooth_img = Button(self.root, image=self.smooth_img, bd=0,
                            cursor="hand2", command=smooth, borderwidth=2)
         smooth_img.place(x=50, y=700, width=210, height=60)
+
+        # Motion Blur Image Button
+        mblur_img = Image.open('mblur.png')
+        mblur_img = mblur_img.resize((210, 60), Image.ANTIALIAS)
+        self.mblur_img = ImageTk.PhotoImage(mblur_img)
+        mblur_img = Button(self.root, image=self.mblur_img, bd=0,
+                           cursor="hand2", command=mblur, borderwidth=2)
+        mblur_img.place(x=290, y=500, width=210, height=60)
+
+        # Gaussian Blur Image Button
+        gblur_img = Image.open('gblur.png')
+        gblur_img = gblur_img.resize((210, 60), Image.ANTIALIAS)
+        self.gblur_img = ImageTk.PhotoImage(gblur_img)
+        gblur_img = Button(self.root, image=self.gblur_img, bd=0,
+                           cursor="hand2", command=gblur, borderwidth=2)
+        gblur_img.place(x=290, y=600, width=210, height=60)
         
 
         # _____________________________________________
