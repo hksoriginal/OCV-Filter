@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "C:\\Users\\hksor\\.msvscode.hdinsight\\hdinsightJupyter\\Scripts\\python.exe",
+    "python.defaultInterpreterPath": "C:\\Users\\hksor\\.msvscode.hdinsight\\hdinsightJupyter\\Scripts\\python.exe",
+    "jupyter.jupyterLaunchTimeout": 240000
+}
