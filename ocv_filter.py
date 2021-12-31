@@ -141,6 +141,20 @@ class ocvf:
                  messagebox.showinfo(
                 "Welcome", "Error!,\nNo Image selected") 
 
+        def undo():
+            try:
+                image = cv2.imread(filename) 
+                # image = cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
+                image = cv2.resize(image,(850,430))
+                b,g,r = cv2.split(self.image)
+                self.image = cv2.merge((r,g,b))
+                self.org = ImageTk.PhotoImage(image = Image.fromarray(self.image))            
+                label_prev = Label(self.root, image=self.org)
+                label_prev.place(x=50, y=20, width=850, height=450) 
+            except:
+                 messagebox.showinfo(
+                "Welcome", "Error!,\nNo Image selected") 
+
         # Gaussian Blur
         def gblur():
             try:
@@ -174,8 +188,8 @@ class ocvf:
         browse_img = browse_img.resize((50, 50), Image.ANTIALIAS)
         self.browse_img = ImageTk.PhotoImage(browse_img)
         browse_img = Button(root, image=self.browse_img, bd=0,
-                            cursor="hand2", command=browseFiles, borderwidth=2)
-        browse_img.place(x=50, y=800, width=50, height=50)
+                        cursor="hand2", command=browseFiles, borderwidth=2)
+        browse_img.place(x=930, y=20, width=50, height=50)
 
         # Save Button
         save_img = Image.open('save.png')
@@ -183,7 +197,7 @@ class ocvf:
         self.save_img = ImageTk.PhotoImage(save_img)
         save_img = Button(root, image=self.save_img, bd=0,
                           cursor="hand2", command=save, borderwidth=2)
-        save_img.place(x=150, y=800, width=50, height=50)
+        save_img.place(x=930, y=90, width=50, height=50)
 
 
         # # button label
@@ -229,6 +243,14 @@ class ocvf:
         gblur_img = Button(self.root, image=self.gblur_img, bd=0,
                            cursor="hand2", command=gblur, borderwidth=2)
         gblur_img.place(x=290, y=600, width=210, height=60)
+
+        # undo Changes Button
+        undo_img = Image.open('undo.png')
+        undo_img =undo_img.resize((210, 60), Image.ANTIALIAS)
+        self.undo_img = ImageTk.PhotoImage(undo_img)
+        undo_img = Button(self.root, image=self.undo_img, bd=0,
+                           cursor="hand2", command=undo, borderwidth=2)
+        undo_img.place(x=290, y=700, width=210, height=60)
         
 
         # _____________________________________________
