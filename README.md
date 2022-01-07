@@ -27,6 +27,7 @@ OCV Filter is tool that uses openCV library to perform operations on images and 
 ![image](https://user-images.githubusercontent.com/44989568/148484224-c36fc58f-223a-4b24-ab01-e64fe931e5e1.png)
 
 ### Vignette Effect
+![image](https://user-images.githubusercontent.com/44989568/148484580-6c7848d9-7f9a-4aa7-8ad1-633a9b176b7a.png)
 
 
 ### Undo Changes
