@@ -21,12 +21,13 @@ OCV Filter is tool that uses openCV library to perform operations on images and 
 ![image](https://user-images.githubusercontent.com/44989568/148484141-8614278d-7430-4fa6-96af-6bb8d9955d15.png)
 
 ### Motion Blur
+![image](https://user-images.githubusercontent.com/44989568/148484199-8e5fd65d-471e-4fed-ac14-a7c420339bd4.png)
 
 ### Gaussian Blur
 ![image](https://user-images.githubusercontent.com/44989568/148484224-c36fc58f-223a-4b24-ab01-e64fe931e5e1.png)
 
 ### Vignette Effect
-![image](https://user-images.githubusercontent.com/44989568/148484199-8e5fd65d-471e-4fed-ac14-a7c420339bd4.png)
+
 
 ### Undo Changes
 ![image](https://user-images.githubusercontent.com/44989568/148484275-8f00bc28-d32c-47c8-9a38-29b40ee12c00.png)
