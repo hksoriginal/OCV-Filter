@@ -15,10 +15,10 @@ OCV Filter is tool that uses openCV library to perform operations on images and 
 ![image](https://user-images.githubusercontent.com/44989568/148484121-a8b09591-58b3-4b5a-a82f-98689e682b9d.png)
 
 ### Smoothen Image
-![image](https://user-images.githubusercontent.com/44989568/148484164-6ac7f3af-c24a-4d4c-bb3f-429a78e1daec.png)
+
 
 ### Plot Histogram
-![image](https://user-images.githubusercontent.com/44989568/148484141-8614278d-7430-4fa6-96af-6bb8d9955d15.png)
+![image](https://user-images.githubusercontent.com/44989568/148484164-6ac7f3af-c24a-4d4c-bb3f-429a78e1daec.png)
 
 ### Motion Blur
 ![image](https://user-images.githubusercontent.com/44989568/148484199-8e5fd65d-471e-4fed-ac14-a7c420339bd4.png)
